@@ -11,8 +11,10 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/blog">Blog</Link></li>
         {
-            user?.uid ?
-                <li><Link to="/signOut">Sign Out</Link></li>
+            user?.email ?
+                <>
+                    <li><Link to="/signOut">Sign Out</Link></li>
+                </>
                 :
                 <li><Link to="/login">Login</Link></li>
         }
