@@ -16,6 +16,9 @@ const Navbar = () => {
     const menuItems = <React.Fragment>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/blog">Blog</Link></li>
+        <li><Link to="/iphone">Iphone</Link></li>
+        <li><Link to="/samsung">Samsung</Link></li>
+        <li><Link to="/xiaomi">Xiaomi</Link></li>
         {
             user?.uid ?
                 <>
@@ -37,7 +40,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost normal-case text-xl">......</Link>
+                <Link to="/" className="btn btn-ghost normal-case text-xl">BUY-SELL.COM</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

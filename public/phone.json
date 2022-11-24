@@ -1,0 +1,83 @@
+[
+    {
+        "categoryId": 1,
+        "name": "Iphone 11",
+        "picture": "https://ibb.co/H7wRbyR",
+        "location": "Bangladesh",
+        "resale_price": 129,
+        "original_price": 199,
+        "years_of_use": "6 month"
+    },
+    {
+        "categoryId": 1,
+        "name": "Iphone 12",
+        "picture": "https://ibb.co/JvJ66Cy",
+        "location": "Bangladesh",
+        "resale_price": 199,
+        "original_price": 259,
+        "years_of_use": "8 month"
+    },
+    {
+        "categoryId": 1,
+        "name": "Iphone 13",
+        "picture": "https://ibb.co/xfxVGF1",
+        "location": "Bangladesh",
+        "resale_price": 299,
+        "original_price": 399,
+        "years_of_use": "1 year"
+    },
+    {
+        "categoryId": 2,
+        "name": "Samsung S20 Ultra",
+        "picture": "https://ibb.co/R91fG9P",
+        "location": "Bangladesh",
+        "resale_price": 209,
+        "original_price": 229,
+        "years_of_use": "6 month"
+    },
+    {
+        "categoryId": 2,
+        "name": "Samsung M30 S",
+        "picture": "https://ibb.co/RTdzNfD",
+        "location": "Bangladesh",
+        "resale_price": 99,
+        "original_price": 119,
+        "years_of_use": "8 month"
+    },
+    {
+        "categoryId": 2,
+        "name": "Samsung Galaxy S8",
+        "picture": "https://ibb.co/Smp7K37",
+        "location": "Bangladesh",
+        "resale_price": 129,
+        "original_price": 299,
+        "years_of_use": "1 year"
+    },
+    {
+        "categoryId": 3,
+        "name": "Mi 10",
+        "picture": "https://ibb.co/G7H9mxd",
+        "location": "Bangladesh",
+        "resale_price": 99,
+        "original_price": 149,
+        "years_of_use": "1 year"
+    },
+    {
+        "categoryId": 3,
+        "name": "Mi K20 pro",
+        "picture": "https://ibb.co/vd1wnmW",
+        "location": "Bangladesh",
+        "resale_price": 119,
+        "original_price": 179,
+        "years_of_use": "1 year"
+    },
+    {
+        "categoryId": 3,
+        "name": "Redmi 7A",
+        "picture": "https://ibb.co/z4yJgtW",
+        "location": "Bangladesh",
+        "resale_price": 129,
+        "original_price": 199,
+        "years_of_use": "1 year"
+    }
+]
