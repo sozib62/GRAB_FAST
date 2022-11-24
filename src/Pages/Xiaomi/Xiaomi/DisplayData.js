@@ -1,7 +1,7 @@
 import React from 'react';
 
-const DisplayData = ({ samsungData }) => {
-    const { name, location, original_price, picture, resale_price, years_of_use } = samsungData;
+const DisplayData = (xiaomiData) => {
+    const { name, location, original_price, picture, resale_price, years_of_use } = xiaomiData;
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">

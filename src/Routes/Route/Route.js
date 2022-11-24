@@ -6,6 +6,7 @@ import SignUp from "../../Pages/Home/SignUp/SignUp/SignUp";
 import Iphone from "../../Pages/Iphone/Iphone/Iphone";
 import Login from "../../Pages/Login/Login/Login";
 import Samsung from "../../Pages/Samsung/Samsung/Samsung"
+import Xiaomi from "../../Pages/Xiaomi/Xiaomi/Xiaomi";
 
 const router = createBrowserRouter([
     {
@@ -40,7 +41,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/xiaomi',
-                element: <Login></Login>
+                element: <Xiaomi></Xiaomi>,
+                loader: () => fetch('http://localhost:5000/category/2')
             },
         ]
     }
