@@ -11,6 +11,7 @@ import Samsung from "../../Pages/Samsung/Samsung/Samsung"
 import Xiaomi from "../../Pages/Xiaomi/Xiaomi/Xiaomi";
 import PrivateRoute from "../PrivateRoute/PrivateRoute/PrivateRoute";
 import AllUsers from '../../Pages/Dashboard/AllUsers/AllUsers/AllUsers'
+import AdminRoute from "../PrivateRoute/AdminRoute/AdminRoute";
 
 const router = createBrowserRouter([
     {
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/allusers',
-                element: <AllUsers></AllUsers>
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
             }
         ]
     }
