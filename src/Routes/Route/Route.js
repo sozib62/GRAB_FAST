@@ -12,6 +12,8 @@ import Xiaomi from "../../Pages/Xiaomi/Xiaomi/Xiaomi";
 import PrivateRoute from "../PrivateRoute/PrivateRoute/PrivateRoute";
 import AllUsers from '../../Pages/Dashboard/AllUsers/AllUsers/AllUsers'
 import AdminRoute from "../PrivateRoute/AdminRoute/AdminRoute";
+import AddProduct from "../../Pages/AddProduct/AddProduct";
+import SeeProduct from "../../Pages/AddProduct/SeeProduct/SeeProduct";
 
 const router = createBrowserRouter([
     {
@@ -59,6 +61,14 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/allusers',
                 element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+            },
+            {
+                path: '/dashboard/addproduct',
+                element: <AdminRoute><AddProduct></AddProduct></AdminRoute>
+            },
+            {
+                path: '/dashboard/seeproduct',
+                element: <AdminRoute><SeeProduct></SeeProduct></AdminRoute>
             }
         ]
     }
