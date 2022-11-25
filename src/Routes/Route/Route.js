@@ -7,6 +7,7 @@ import Iphone from "../../Pages/Iphone/Iphone/Iphone";
 import Login from "../../Pages/Login/Login/Login";
 import Samsung from "../../Pages/Samsung/Samsung/Samsung"
 import Xiaomi from "../../Pages/Xiaomi/Xiaomi/Xiaomi";
+import PrivateRoute from "../PrivateRoute/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -31,17 +32,17 @@ const router = createBrowserRouter([
             },
             {
                 path: '/iphone',
-                element: <Iphone></Iphone>,
+                element: <PrivateRoute><Iphone></Iphone></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/category/1')
             },
             {
                 path: '/samsung',
-                element: <Samsung></Samsung>,
+                element: <PrivateRoute><Samsung></Samsung></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/category/2')
             },
             {
                 path: '/xiaomi',
-                element: <Xiaomi></Xiaomi>,
+                element: <PrivateRoute><Xiaomi></Xiaomi></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/category/2')
             },
         ]
