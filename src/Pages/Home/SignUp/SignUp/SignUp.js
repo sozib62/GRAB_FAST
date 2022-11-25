@@ -1,16 +1,21 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
+import useToken from '../../../../Hooks/useToken/useToken';
 
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [signUpError, setSignUPError] = useState('');
-    const { createUser, updateUser } = useContext(AuthContext)
-    const location = useLocation();
+    const { createUser, updateUser } = useContext(AuthContext);
+    const [userEmail, setUserEmail] = useState('')
+    const [token] = useToken(userEmail)
+
     const navigate = useNavigate();
 
-    const from = location.state?.from?.pathname || '/';
+    if (token) {
+        navigate('/')
+    }
 
     const handleSignUp = (data) => {
         setSignUPError('');
@@ -26,8 +31,6 @@ const SignUp = () => {
                         saveUser(data.name, data.email, data.role);
                     })
                     .catch(err => console.log(err));
-
-                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
@@ -47,7 +50,7 @@ const SignUp = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // setCreatedUserEmail(email);
+                setUserEmail(email)
             })
     }
 

@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
+import DashboardLayout from "../../Layout/DashboardLayout/DashboardLayout/DashboardLayout";
 import Main from "../../Layout/Main/Main";
 import Blog from "../../Pages/Blog/Blog/Blog";
+import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import Home from "../../Pages/Home/Home/Home";
 import SignUp from "../../Pages/Home/SignUp/SignUp/SignUp";
 import Iphone from "../../Pages/Iphone/Iphone/Iphone";
@@ -41,6 +43,16 @@ const router = createBrowserRouter([
             {
                 path: '/xiaomi',
                 element: <PrivateRoute><Xiaomi></Xiaomi></PrivateRoute>
+            },
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <DashboardLayout></DashboardLayout>,
+        children: [
+            {
+                path: '/dashboard',
+                element: <Dashboard></Dashboard>
             },
         ]
     }
