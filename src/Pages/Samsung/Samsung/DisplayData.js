@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DisplayData = ({ samsungData }) => {
+const DisplayData = ({ samsungData, setCategoryData }) => {
     const { name, location, original_price, picture, resale_price, years_of_use } = samsungData;
 
     return (
@@ -13,7 +13,11 @@ const DisplayData = ({ samsungData }) => {
                 <p>Resale_Price:${resale_price}</p>
                 <p> years_of_use:${years_of_use}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <label htmlFor="booking-modal"
+                        className="btn btn-primary
+                     text-white"
+                        onClick={() => setCategoryData(samsungData)}
+                    >Book Now</label>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [signUpError, setSignUPError] = useState('');
-    const { createUser } = useContext(AuthContext)
+    const { createUser, updateUser } = useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -18,13 +18,39 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then(() => {
+                        saveUser(data.name, data.email, data.role);
+                    })
+                    .catch(err => console.log(err));
+
                 navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
                 setSignUPError(error.message);
             });
+
     }
+
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // setCreatedUserEmail(email);
+            })
+    }
+
 
     return (
         <div className='h-[800px] flex justify-center items-center'>

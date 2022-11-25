@@ -32,18 +32,15 @@ const router = createBrowserRouter([
             },
             {
                 path: '/iphone',
-                element: <PrivateRoute><Iphone></Iphone></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/category/1')
+                element: <PrivateRoute><Iphone></Iphone></PrivateRoute>
             },
             {
                 path: '/samsung',
-                element: <PrivateRoute><Samsung></Samsung></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/category/2')
+                element: <PrivateRoute><Samsung></Samsung></PrivateRoute>
             },
             {
                 path: '/xiaomi',
-                element: <PrivateRoute><Xiaomi></Xiaomi></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/category/2')
+                element: <PrivateRoute><Xiaomi></Xiaomi></PrivateRoute>
             },
         ]
     }
