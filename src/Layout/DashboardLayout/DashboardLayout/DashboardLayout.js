@@ -28,21 +28,23 @@ const DashboardLayout = () => {
                         {
                             buyer &&
                             <>
-                                <li><Link to='/dashboard'>My Orders</Link></li>
+                                <li className='text-xl'><Link to='/dashboard/myorders'>My Orders</Link></li>
                             </>
                         }
 
                         {
                             seller &&
                             <>
-                                <li><Link to='/dashboard/addproduct'>Add a Product</Link></li>
-                                <li><Link to='/dashboard/seeproduct'>My Product</Link></li>
+                                <li className='text-xl'><Link to='/dashboard/addproduct'>Add a Product</Link></li>
+                                <li className='text-xl'><Link to='/dashboard/seeproduct'>My Product</Link></li>
                             </>
                         }
                         {
                             isAdmin &&
                             <>
-                                <li><Link to='/dashboard/allusers'>All Users</Link></li>
+                                <li className='text-xl'><Link to='/dashboard/allusers'>All Users</Link></li>
+                                <li className='text-xl'><Link to='/dashboard/allseller'>All Seller</Link></li>
+                                <li className='text-xl'><Link to='/dashboard/allbuyer'>All Buyer</Link></li>
                             </>
                         }
                     </ul>

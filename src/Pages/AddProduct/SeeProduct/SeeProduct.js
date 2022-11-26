@@ -47,6 +47,7 @@ const SeeProduct = () => {
                             <th>Price</th>
                             <th>Phone</th>
                             <th>Action</th>
+                            <th>Advertise</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,6 +64,7 @@ const SeeProduct = () => {
                                 <td>$ {product.price}</td>
                                 <td>{product.phone}</td>
                                 <td><button onClick={() => handleDelete(product._id)} className='btn btn-xs btn-error'>Delete</button></td>
+                                <td><button className='btn btn-xs btn-primary'>Advertise</button></td>
                             </tr>)
                         }
                     </tbody>

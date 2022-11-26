@@ -14,8 +14,9 @@ import AllUsers from '../../Pages/Dashboard/AllUsers/AllUsers/AllUsers'
 import AdminRoute from "../PrivateRoute/AdminRoute/AdminRoute";
 import AddProduct from "../../Pages/AddProduct/AddProduct";
 import SeeProduct from "../../Pages/AddProduct/SeeProduct/SeeProduct";
-import SellerRoute from "../PrivateRoute/SellerRoute/SellerRoute";
-import BuyerRoute from "../PrivateRoute/buyerRoute/buyerRoute";
+import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders/MyOrders";
+import AllSeller from "../../Pages/Dashboard/AllUsers/AllSeller/AllSeller";
+import AllBuyers from "../../Pages/Dashboard/AllUsers/AllBuyers/AllBuyers";
 
 const router = createBrowserRouter([
     {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
                 element: <Dashboard></Dashboard>
             },
             {
+                path: '/dashboard/myorders',
+                element: <MyOrders></MyOrders>
+            },
+            {
                 path: '/dashboard/allusers',
                 element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
             },
@@ -71,6 +76,14 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/seeproduct',
                 element: <SeeProduct></SeeProduct>
+            },
+            {
+                path: '/dashboard/allseller',
+                element: <AllSeller></AllSeller>
+            },
+            {
+                path: '/dashboard/allbuyer',
+                element: <AllBuyers></AllBuyers>
             }
         ]
     }

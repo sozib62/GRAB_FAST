@@ -1,10 +1,9 @@
 import React from 'react';
-import MyOrders from '../MyOrders/MyOrders/MyOrders';
 
 const Dashboard = () => {
     return (
-        <div>
-            <MyOrders></MyOrders>
+        <div className='text-center mt-20'>
+            <h1 className='text-4xl font-semibold'>See Your data</h1>
         </div>
     );
 };
