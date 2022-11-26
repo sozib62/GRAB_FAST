@@ -34,7 +34,7 @@ const SeeProduct = () => {
 
     return (
         <div>
-            <h1 className="text-3xl">See All Product-{products.length}</h1>
+            <h1 className="text-3xl">My Product-{products.length}</h1>
 
             <div className="overflow-x-auto">
                 <table className="table w-full">
