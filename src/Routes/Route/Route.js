@@ -17,6 +17,7 @@ import SeeProduct from "../../Pages/AddProduct/SeeProduct/SeeProduct";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders/MyOrders";
 import AllSeller from "../../Pages/Dashboard/AllUsers/AllSeller/AllSeller";
 import AllBuyers from "../../Pages/Dashboard/AllUsers/AllBuyers/AllBuyers";
+import Error from "../Error/Error";
 
 const router = createBrowserRouter([
     {
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
                 element: <AllBuyers></AllBuyers>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <Error></Error>
     }
 ])
 
