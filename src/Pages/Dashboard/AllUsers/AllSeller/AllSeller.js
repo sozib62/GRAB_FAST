@@ -30,6 +30,23 @@ const AllSeller = () => {
                 }
             })
     }
+    const handleVerified = id => {
+        fetch(`https://assignment-12-server-site.vercel.app/users/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                    toast.success('Seller Verified Success')
+                    refetch()
+                }
+            })
+    }
 
 
     return (
@@ -41,6 +58,7 @@ const AllSeller = () => {
                 <table className="table w-full">
                     <thead>
                         <tr>
+                            <th>Verified Badge</th>
                             <th>Seller Name</th>
                             <th>Seller email</th>
                             <th>Action</th>
@@ -52,10 +70,21 @@ const AllSeller = () => {
                             sellers.map(seller => seller.role === 'Seller'
                                 &&
                                 <tr key={seller._id}>
+                                    <th>
+                                        {
+                                            seller?.status === 'verified' &&
+                                            <input type="checkbox" checked className="checkbox checkbox-primary" />
+                                        }
+                                    </th>
                                     <th>{seller.name}</th>
                                     <th>{seller.email}</th>
                                     <th><button onClick={() => handleDelete(seller._id)} className='btn btn-xs btn-error'>delete</button></th>
-                                    <th><button className='btn btn-xs btn-primary'>Unverified</button></th>
+                                    {
+                                        seller?.status === 'verified' ?
+                                            <th><button onClick={() => handleVerified(seller._id)} className='btn btn-xs btn-primary'>verified</button></th>
+                                            :
+                                            <th><button onClick={() => handleVerified(seller._id)} className='btn btn-xs btn-primary'>Unverified</button></th>
+                                    }
                                 </tr>)
                         }
                     </tbody>

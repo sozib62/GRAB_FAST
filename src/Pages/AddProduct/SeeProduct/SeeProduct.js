@@ -2,6 +2,8 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import toast from 'react-hot-toast';
 import Loading from '../../../Component/Loading/Loading';
+
+
 const SeeProduct = () => {
 
     const { data: products = [], isLoading, refetch } = useQuery({
@@ -31,6 +33,23 @@ const SeeProduct = () => {
             })
     }
 
+    const handleAdvertise = id => {
+        fetch(`https://assignment-12-server-site.vercel.app/advertise/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                if (data.modifiedCount > 0) {
+                    toast.success('successfully added advertise');
+                    refetch()
+                }
+            })
+    }
     return (
         <div>
             <h1 className="text-3xl">My Product-{products.length}</h1>
@@ -65,7 +84,12 @@ const SeeProduct = () => {
                                 <td>{product.phone}</td>
                                 <td>{product.year_of_purchase}</td>
                                 <td><button onClick={() => handleDelete(product._id)} className='btn btn-xs btn-error'>Delete</button></td>
-                                <td><button className='btn btn-xs btn-primary'>Advertise</button></td>
+                                {
+                                    product?.status === 'advertise' ?
+                                        <td><button onClick={() => handleAdvertise(product._id)} className='btn btn-xs btn-primary'>Advertised</button></td>
+                                        :
+                                        <td><button onClick={() => handleAdvertise(product._id)} className='btn btn-xs btn-primary'>Advertise</button></td>
+                                }
                             </tr>)
                         }
                     </tbody>
