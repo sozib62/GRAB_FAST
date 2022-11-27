@@ -89,8 +89,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/payment/:id',
-                element: <Payment></Payment>
-                // loader: ({ params }) => fetch(`https://assignment-12-server-site.vercel.app/bookings/${params.id}`)
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch(`https://assignment-12-server-site.vercel.app/bookings/${params.id}`)
             }
         ]
     },
