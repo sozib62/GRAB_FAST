@@ -8,7 +8,7 @@ const Samsung = () => {
     const [categoryData, setCategoryData] = useState(null)
 
     useEffect(() => {
-        fetch('http://localhost:5000/category/2')
+        fetch('https://assignment-12-server-site.vercel.app/category/2')
             .then(res => res.json())
             .then(data => setSamsungsData(data))
     }, [])

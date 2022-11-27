@@ -7,14 +7,14 @@ const AllUsers = () => {
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users');
+            const res = await fetch('https://assignment-12-server-site.vercel.app/users');
             const data = await res.json();
             return data;
         }
     })
 
     const handleMakeAdmin = id => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`https://assignment-12-server-site.vercel.app/users/admin/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -42,7 +42,6 @@ const AllUsers = () => {
                             <th>User Email</th>
                             <th>User Role</th>
                             <th>Make Admin</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,7 +52,6 @@ const AllUsers = () => {
                                 <td>{user.email}</td>
                                 <td>{user.role}</td>
                                 <td>{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Admin</button>}</td>
-                                <td><button className='btn btn-xs btn-error'>Delete</button></td>
                             </tr>)
                         }
                     </tbody>

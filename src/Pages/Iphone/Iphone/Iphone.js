@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import BookingModal from '../../BookingModal/BookingModal/BookingModal';
 import DisplayData from './DisplayData';
 
@@ -7,11 +8,12 @@ const Iphone = () => {
     const [iphonesData, setIphonesData] = useState([])
     const [categoryData, setCategoryData] = useState(null)
 
-    useEffect(() => {
-        fetch('http://localhost:5000/category/1')
-            .then(res => res.json())
-            .then(data => setIphonesData(data))
-    }, [])
+    axios.get('https://assignment-12-server-site.vercel.app/category/1')
+        .then(res => {
+            setIphonesData(res.data)
+        })
+        .catch(err => console.log(err))
+
 
     return (
         <div>

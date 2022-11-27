@@ -18,6 +18,7 @@ import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders/MyOrders";
 import AllSeller from "../../Pages/Dashboard/AllUsers/AllSeller/AllSeller";
 import AllBuyers from "../../Pages/Dashboard/AllUsers/AllBuyers/AllBuyers";
 import Error from "../Error/Error";
+import Payment from "../../Pages/Dashboard/Payment/Payment";
 
 const router = createBrowserRouter([
     {
@@ -85,6 +86,11 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/allbuyer',
                 element: <AllBuyers></AllBuyers>
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <Payment></Payment>
+                // loader: ({ params }) => fetch(`https://assignment-12-server-site.vercel.app/bookings/${params.id}`)
             }
         ]
     },

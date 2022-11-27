@@ -34,7 +34,7 @@ const AddProduct = () => {
                         phone: data.phone,
                     }
 
-                    fetch('http://localhost:5000/product', {
+                    fetch('https://assignment-12-server-site.vercel.app/product', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -2,13 +2,12 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import toast from 'react-hot-toast';
 import Loading from '../../../Component/Loading/Loading';
-
 const SeeProduct = () => {
 
     const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/product');
+            const res = await fetch('https://assignment-12-server-site.vercel.app/product');
             const data = await res.json();
             return data;
         }
@@ -19,7 +18,7 @@ const SeeProduct = () => {
     }
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://assignment-12-server-site.vercel.app/product/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -46,6 +45,7 @@ const SeeProduct = () => {
                             <th>Product Name</th>
                             <th>Price</th>
                             <th>Phone</th>
+                            <th>Purchase</th>
                             <th>Action</th>
                             <th>Advertise</th>
                         </tr>
@@ -63,6 +63,7 @@ const SeeProduct = () => {
                                 <td>{product.productName}</td>
                                 <td>$ {product.price}</td>
                                 <td>{product.phone}</td>
+                                <td>{product.year_of_purchase}</td>
                                 <td><button onClick={() => handleDelete(product._id)} className='btn btn-xs btn-error'>Delete</button></td>
                                 <td><button className='btn btn-xs btn-primary'>Advertise</button></td>
                             </tr>)

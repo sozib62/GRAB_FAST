@@ -8,7 +8,7 @@ const Xiaomi = () => {
     const [categoryData, setCategoryData] = useState(null)
 
     useEffect(() => {
-        fetch('http://localhost:5000/category/3')
+        fetch('https://assignment-12-server-site.vercel.app/category/3')
             .then(res => res.json())
             .then(data => setXiaomisData(data))
     }, [])

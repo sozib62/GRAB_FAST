@@ -7,7 +7,7 @@ const AllSeller = () => {
     const { data: sellers = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users');
+            const res = await fetch('https://assignment-12-server-site.vercel.app/users');
             const data = await res.json();
             return data;
         }
@@ -18,7 +18,7 @@ const AllSeller = () => {
     }
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://assignment-12-server-site.vercel.app/users/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -44,6 +44,7 @@ const AllSeller = () => {
                             <th>Seller Name</th>
                             <th>Seller email</th>
                             <th>Action</th>
+                            <th>Verify</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,6 +55,7 @@ const AllSeller = () => {
                                     <th>{seller.name}</th>
                                     <th>{seller.email}</th>
                                     <th><button onClick={() => handleDelete(seller._id)} className='btn btn-xs btn-error'>delete</button></th>
+                                    <th><button className='btn btn-xs btn-primary'>Unverified</button></th>
                                 </tr>)
                         }
                     </tbody>
