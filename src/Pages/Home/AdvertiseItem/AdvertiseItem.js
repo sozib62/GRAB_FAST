@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import AdvertiseItemDisplay from './AdvertiseItemDisplay';
 
 const AdvertiseItem = () => {
+
+    const [advertisedItem, setAdvertisedItem] = useState([])
+
+    useEffect(() => {
+        fetch('https://assignment-12-server-site.vercel.app/advertise')
+            .then(res => res.json())
+            .then(data => setAdvertisedItem(data))
+    }, [])
+
+
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
-                </div>
+
+        <div className='my-24'>
+            <h1 className='text-4xl font-semibold text-center'>Advertised Item...</h1>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-28  mt-10'>
+                {
+                    advertisedItem.map(advertise =>
+                        advertise.status === 'advertise' && <AdvertiseItemDisplay
+                            key={advertise._id}
+                            advertise={advertise}
+                        ></AdvertiseItemDisplay>)
+                }
             </div>
         </div>
     );

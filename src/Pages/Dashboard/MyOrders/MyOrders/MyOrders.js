@@ -45,7 +45,7 @@ const MyOrders = () => {
                                 <td>{booking.categoryName}</td>
                                 <td>$ {booking.price}</td>
                                 <td>
-                                    {
+                                    {/* {
                                         booking.price && !booking.paid && <Link
                                             to={`/dashboard/payment/${booking._id}`}>
                                             <button className='btn btn-primary btn-sm'
@@ -54,7 +54,7 @@ const MyOrders = () => {
                                     }
                                     {
                                         booking.price && booking.paid && <span className='text-primary'>Paid</span>
-                                    }
+                                    } */}
                                 </td>
                             </tr>)
                         }

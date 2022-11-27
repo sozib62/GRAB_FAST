@@ -33,7 +33,8 @@ const BookingModal = ({ categoryData, setCategoryData }) => {
         fetch('https://assignment-12-server-site.vercel.app/bookings', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(booking)
         })
