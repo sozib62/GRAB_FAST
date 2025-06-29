@@ -1,0 +1,6 @@
+project:
+  name: GRAB_FAST
+  description: A JavaScript project for Tea Protocol
+  entry: index.js
+  language: javascript
+  license: MIT
